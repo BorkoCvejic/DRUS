@@ -28,8 +28,7 @@ namespace Server
                 measurement.Time = time;
 
                 databaseModel.Measurements.Add(measurement);
-                databaseModel.SaveChanges();
-                callback.OnMeasurementRecorded();
+                databaseModel.SaveChanges();                
             }
             catch (Exception e)
             {
@@ -37,13 +36,53 @@ namespace Server
                 Console.WriteLine("Error : {0}", e.Message);
                 Console.ReadKey();
             }
-            
+
+            var locationId = (from r in databaseModel.RTUs
+                              where r.RTUId == RTUName
+                              select r.Location).FirstOrDefault();
+            var location = (from l in databaseModel.Locations
+                            where l.Id == locationId
+                            select l.LocationName).FirstOrDefault();
+
+            SendingMeasurement m;
+            m.RTUName = RTUName;
+            m.location = location;
+            m.time = time;
+            m.type = type;
+            m.value = value;
+
+            callback.OnMeasurementRecorded(m);
         }
 
         public string Start()
         {           
             callback = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
             return "Service started...";
-        }        
+        }
+
+        public SendingReport GetAllMeasurementsInTimeRange(string RTUName, DateTime start, DateTime end)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SendingReport GetAllMeasurementsByType(string RTUName, string type, DateTime start, DateTime end)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Tuple<List<DateTime>, List<DateTime>> GeAlltMomentsRTU(string RTUName, int minmax, string type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Tuple<double, double> GetAvgValuesLoc(string location, DateTime start, DateTime end)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Tuple<List<DateTime>, List<DateTime>> GetAllMomentsLoc(string location, int minmax, string type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -59,11 +59,20 @@
     <None Include="Service References\ObserverReference\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ObserverReference\ObserverClient.ObserverReference.SendingReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ObserverReference\Server.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ObserverReference\service.wsdl" />
     <None Include="Service References\ObserverReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ObserverReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObserverReference\System.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

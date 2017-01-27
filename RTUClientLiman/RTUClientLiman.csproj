@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\RTUClientReference\Server.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\RTUClientReference\service.wsdl" />
     <None Include="Service References\RTUClientReference\service.xsd">
       <SubType>Designer</SubType>

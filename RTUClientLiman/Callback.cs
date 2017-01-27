@@ -8,7 +8,7 @@ namespace RTUClientLiman
 {
     class Callback : RTUClientReference.IServiceWithCBCallback
     {
-        public void OnMeasurementRecorded()
+        public void OnMeasurementRecorded(RTUClientReference.SendingMeasurement m)
         {
             Console.WriteLine("Measurement sent!");
         }

@@ -8,7 +8,7 @@ namespace RTUClientAdice
 {
     class Callback : RTUReference.IServiceWithCBCallback
     {
-        public void OnMeasurementRecorded()
+        public void OnMeasurementRecorded(RTUReference.SendingMeasurement m)
         {
             Console.WriteLine("Measurement sent!");
         }

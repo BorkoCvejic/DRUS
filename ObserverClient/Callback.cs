@@ -8,12 +8,11 @@ namespace ObserverClient
 {
     class Callback : ObserverReference.IServiceWithCBCallback
     {
-        public void OnMeasurementRecorded(Dictionary<string, int> measurements)
+        public void OnMeasurementRecorded(ObserverReference.SendingMeasurement m)
         {
-            foreach (var item in measurements)
-            {
-                Console.WriteLine(string.Format("ID: {0}, {1}", item.Key, item.Value));
-            }
+            Console.WriteLine("RTU: " + m.RTUName + ", value: " + m.value.ToString() + ", type: " + m.type
+                              + ", location: " + m.location
+                              + ", time: " + m.time.ToString());
         }
     }
 }

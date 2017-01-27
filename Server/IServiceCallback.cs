@@ -10,6 +10,6 @@ namespace Server
     interface IServiceCallback
     {
         [OperationContract]
-        void OnMeasurementRecorded();
+        void OnMeasurementRecorded(SendingMeasurement m);
     }
 }
