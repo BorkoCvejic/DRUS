@@ -21,6 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTUClientAdice", "RTUClient
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverClientUI", "ObserverClientUI\ObserverClientUI.csproj", "{80DBE01E-9626-4B31-A068-55C6EF9126E3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB2DA209-AF33-4933-93D9-2C3C0AF55F26} = {CB2DA209-AF33-4933-93D9-2C3C0AF55F26}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
