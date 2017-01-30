@@ -15,50 +15,6 @@ namespace ObserverClientUI.ObserverReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SendingReport", Namespace="http://schemas.datacontract.org/2004/07/Server")]
-    [System.SerializableAttribute()]
-    public partial struct SendingReport : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ObserverClientUI.ObserverReference.SendingMeasurement[] ReportsField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ObserverClientUI.ObserverReference.SendingMeasurement[] Reports {
-            get {
-                return this.ReportsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportsField, value) != true)) {
-                    this.ReportsField = value;
-                    this.RaisePropertyChanged("Reports");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SendingMeasurement", Namespace="http://schemas.datacontract.org/2004/07/Server")]
     [System.SerializableAttribute()]
     public partial struct SendingMeasurement : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -180,36 +136,6 @@ namespace ObserverClientUI.ObserverReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/RecordMeasurement", ReplyAction="http://tempuri.org/IServiceWithCB/RecordMeasurementResponse")]
         System.Threading.Tasks.Task RecordMeasurementAsync(string RTUName, int value, string type, System.DateTime time);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMeasurementsInTimeRange", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMeasurementsInTimeRangeResponse")]
-        ObserverClientUI.ObserverReference.SendingReport GetAllMeasurementsInTimeRange(string RTUName, System.DateTime start, System.DateTime end);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMeasurementsInTimeRange", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMeasurementsInTimeRangeResponse")]
-        System.Threading.Tasks.Task<ObserverClientUI.ObserverReference.SendingReport> GetAllMeasurementsInTimeRangeAsync(string RTUName, System.DateTime start, System.DateTime end);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMeasurementsByType", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMeasurementsByTypeResponse")]
-        ObserverClientUI.ObserverReference.SendingReport GetAllMeasurementsByType(string RTUName, string type, System.DateTime start, System.DateTime end);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMeasurementsByType", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMeasurementsByTypeResponse")]
-        System.Threading.Tasks.Task<ObserverClientUI.ObserverReference.SendingReport> GetAllMeasurementsByTypeAsync(string RTUName, string type, System.DateTime start, System.DateTime end);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMomentsRTU", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMomentsRTUResponse")]
-        System.Tuple<System.DateTime[], System.DateTime[]> GetAllMomentsRTU(string RTUName, int minmax, string type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMomentsRTU", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMomentsRTUResponse")]
-        System.Threading.Tasks.Task<System.Tuple<System.DateTime[], System.DateTime[]>> GetAllMomentsRTUAsync(string RTUName, int minmax, string type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAvgValuesLoc", ReplyAction="http://tempuri.org/IServiceWithCB/GetAvgValuesLocResponse")]
-        System.Tuple<double, double> GetAvgValuesLoc(string location, System.DateTime start, System.DateTime end);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAvgValuesLoc", ReplyAction="http://tempuri.org/IServiceWithCB/GetAvgValuesLocResponse")]
-        System.Threading.Tasks.Task<System.Tuple<double, double>> GetAvgValuesLocAsync(string location, System.DateTime start, System.DateTime end);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMomentsLoc", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMomentsLocResponse")]
-        System.Tuple<System.DateTime[], System.DateTime[]> GetAllMomentsLoc(string location, int minmax, string type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWithCB/GetAllMomentsLoc", ReplyAction="http://tempuri.org/IServiceWithCB/GetAllMomentsLocResponse")]
-        System.Threading.Tasks.Task<System.Tuple<System.DateTime[], System.DateTime[]>> GetAllMomentsLocAsync(string location, int minmax, string type);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -261,46 +187,6 @@ namespace ObserverClientUI.ObserverReference {
         
         public System.Threading.Tasks.Task RecordMeasurementAsync(string RTUName, int value, string type, System.DateTime time) {
             return base.Channel.RecordMeasurementAsync(RTUName, value, type, time);
-        }
-        
-        public ObserverClientUI.ObserverReference.SendingReport GetAllMeasurementsInTimeRange(string RTUName, System.DateTime start, System.DateTime end) {
-            return base.Channel.GetAllMeasurementsInTimeRange(RTUName, start, end);
-        }
-        
-        public System.Threading.Tasks.Task<ObserverClientUI.ObserverReference.SendingReport> GetAllMeasurementsInTimeRangeAsync(string RTUName, System.DateTime start, System.DateTime end) {
-            return base.Channel.GetAllMeasurementsInTimeRangeAsync(RTUName, start, end);
-        }
-        
-        public ObserverClientUI.ObserverReference.SendingReport GetAllMeasurementsByType(string RTUName, string type, System.DateTime start, System.DateTime end) {
-            return base.Channel.GetAllMeasurementsByType(RTUName, type, start, end);
-        }
-        
-        public System.Threading.Tasks.Task<ObserverClientUI.ObserverReference.SendingReport> GetAllMeasurementsByTypeAsync(string RTUName, string type, System.DateTime start, System.DateTime end) {
-            return base.Channel.GetAllMeasurementsByTypeAsync(RTUName, type, start, end);
-        }
-        
-        public System.Tuple<System.DateTime[], System.DateTime[]> GetAllMomentsRTU(string RTUName, int minmax, string type) {
-            return base.Channel.GetAllMomentsRTU(RTUName, minmax, type);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<System.DateTime[], System.DateTime[]>> GetAllMomentsRTUAsync(string RTUName, int minmax, string type) {
-            return base.Channel.GetAllMomentsRTUAsync(RTUName, minmax, type);
-        }
-        
-        public System.Tuple<double, double> GetAvgValuesLoc(string location, System.DateTime start, System.DateTime end) {
-            return base.Channel.GetAvgValuesLoc(location, start, end);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<double, double>> GetAvgValuesLocAsync(string location, System.DateTime start, System.DateTime end) {
-            return base.Channel.GetAvgValuesLocAsync(location, start, end);
-        }
-        
-        public System.Tuple<System.DateTime[], System.DateTime[]> GetAllMomentsLoc(string location, int minmax, string type) {
-            return base.Channel.GetAllMomentsLoc(location, minmax, type);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<System.DateTime[], System.DateTime[]>> GetAllMomentsLocAsync(string location, int minmax, string type) {
-            return base.Channel.GetAllMomentsLocAsync(location, minmax, type);
         }
     }
 }

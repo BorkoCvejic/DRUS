@@ -11,16 +11,16 @@ namespace RTUClientLiman
 {
     class Program
     {
-        static private RTUClientReference.ServiceWithCBClient proxy; //ovo je klijent servera
-
+        static private RTUClientReference.ServiceWithCBClient proxy;
+        static string RTUName;
         private static void OnTimerElapsedTemp(Object sender, ElapsedEventArgs e)
-        {
-            proxy.RecordMeasurement("Liman01", RandomValueTemp(), "Temp", DateTime.Now);
+        {          
+            proxy.RecordMeasurement(RTUName, RandomValueTemp(), "Temp", DateTime.Now);
         }
 
         private static void OnTimerElapsedHum(Object sender, ElapsedEventArgs e)
         {
-            proxy.RecordMeasurement("Liman01", RandomValueHum(), "Hum", DateTime.Now);
+            proxy.RecordMeasurement(RTUName, RandomValueHum(), "Hum", DateTime.Now);
         }
 
         private static int RandomValueTemp()
@@ -40,6 +40,9 @@ namespace RTUClientLiman
             var callback = new Callback();
             var instance = new InstanceContext(callback);
             proxy = new RTUClientReference.ServiceWithCBClient(instance);
+
+            Console.WriteLine("Enter RTU name:");
+            RTUName = Console.ReadLine();
 
             proxy.Start();
 

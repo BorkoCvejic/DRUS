@@ -10,6 +10,7 @@ namespace ObserverClientUI
     class Program
     {
         static private ObserverReference.ServiceWithCBClient proxy;
+        
         static public string GetRTUName()
         {
             Console.WriteLine("Enter RTU name:");
